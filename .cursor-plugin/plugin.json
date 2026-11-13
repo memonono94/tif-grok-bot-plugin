@@ -1,0 +1,27 @@
+{
+  "name": "the-inmo-factory",
+  "displayName": "The Inmo Factory",
+  "version": "1.0.0",
+  "description": "Connect a The Inmo Factory (TIF) account to manage Argentine real-estate listings, CRM opportunities, agency metrics, team invites, website sections, and publication images over OAuth.",
+  "author": {
+    "name": "The Inmo Factory"
+  },
+  "homepage": "https://www.tif.ar",
+  "repository": "https://github.com/memonono94/tif-grok-bot-plugin",
+  "license": "MIT",
+  "logo": "assets/logo.png",
+  "keywords": [
+    "the-inmo-factory",
+    "tif",
+    "real-estate",
+    "inmobiliaria",
+    "argentina",
+    "crm",
+    "properties",
+    "mcp"
+  ],
+  "category": "integrations",
+  "tags": ["real-estate", "crm", "mcp", "argentina"],
+  "skills": "./skills/",
+  "mcpServers": "./mcp.json"
+}

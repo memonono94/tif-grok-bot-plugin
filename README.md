@@ -1,1 +1,114 @@
-# tif-grok-bot-plugin
+# The Inmo Factory para Cursor
+
+Plugin de [The Inmo Factory](https://www.tif.ar) (TIF) para Cursor y Grok Bot. Conecta tu cuenta de TIF al agente por OAuth y reutiliza el servidor MCP remoto ya publicado en `https://mcp.tif.ar/`.
+
+TIF es la plataforma SaaS para inmobiliarias y corredores en Argentina: sitio con tu marca, catálogo de propiedades, CRM de consultas, métricas, equipo e imágenes de publicación.
+
+Este repositorio **no** incluye ni modifica el servidor. Solo empaqueta el manifiesto, la conexión MCP y skills de uso.
+
+## Qué hace
+
+Después de iniciar sesión con una cuenta de TIF, el agente puede:
+
+- Confirmar la Agencia, el rol, el plan y si las escrituras están habilitadas
+- Buscar y leer fichas de Propiedades
+- Crear, actualizar, cambiar el Estado o eliminar Propiedades (con confirmación)
+- Buscar Oportunidades del CRM (sin identidad del Contacto) y ver su etapa
+- Agregar una nota interna o mover una Oportunidad de Estado (con confirmación)
+- Leer métricas de sitio y, si el rol y el plan lo permiten, indicadores comerciales
+- Leer y editar secciones del sitio (con confirmación)
+- Listar plantillas de diseño y generar imágenes de publicación (con confirmación; no publica en Instagram)
+- Invitar a un integrante del equipo (con confirmación; solo administradores)
+
+Las ~20 herramientas las publica el servidor según tu rol, plan y los kill switches de la Agencia. Si una herramienta no aparece, no está disponible para esa cuenta.
+
+## Cómo conectar (OAuth)
+
+Hace falta una cuenta existente de The Inmo Factory. El plugin no registra usuarios ni procesa pagos.
+
+1. Instalá **The Inmo Factory** desde el Cursor Marketplace (o cargalo en `~/.cursor/plugins/local/the-inmo-factory` para probarlo en local).
+2. Abrí **Cursor Settings → Tools & MCP** y activá el servidor `the-inmo-factory`.
+3. Elegí **Connect** o **Authenticate**.
+4. Iniciá sesión con tu usuario de TIF y autorizá el acceso.
+5. Volvé a Cursor y comprobá que el servidor lista las herramientas.
+
+El endpoint es `https://mcp.tif.ar/` (Streamable HTTP en la raíz del host, no `/mcp`). Cursor descubre OAuth solo; no copies tokens, contraseñas ni API keys al chat ni a `mcp.json`.
+
+Si el login vence o ves 401, desconectá el servidor, volvé a autenticar y recargá la ventana. Cloud Agents guardan un inicio de sesión aparte del de tu máquina.
+
+## Qué pueden cambiar las herramientas
+
+Las lecturas no modifican datos. Las escrituras **nunca** se aplican en la primera llamada: el servidor devuelve un `confirmation_token` (`mcf_…`, válido unos 10 minutos) y un resumen. La segunda llamada, con ese token, confirma el cambio.
+
+| Herramienta | Efecto |
+| --- | --- |
+| `create_property` | Crea una ficha. `active` / `featured` pueden publicarse en el sitio si la Agencia ya está en línea. |
+| `update_property` | Cambia los campos enviados (precio, textos, características, URLs de fotos, etc.). |
+| `update_property_status` | Cambia el Estado (`active`, `hidden`, `featured`, `sold`). |
+| `delete_property` | Elimina la ficha. |
+| `update_agency_site_section` | Actualiza una sección del sitio público. |
+| `add_lead_note` | Guarda una nota interna (vía agente). No se envía al Contacto. |
+| `move_opportunity_stage` | Mueve la Oportunidad de etapa; puede cerrarla como ganada o perdida y altera el Flujo. |
+| `invite_team_member` | Invita por email y rol; manda credenciales. |
+| `create_design_template` | Guarda una plantilla de diseño. |
+| `render_publication_image` | Genera JPEG y los guarda en una pieza de contenido. No publica en Instagram. |
+
+`get_agency_info` incluye `writes_enabled`. Si es `false` (suscripción no operativa o escrituras deshabilitadas), el agente no debe intentar cambios.
+
+`search_leads` y `get_lead` no revelan nombre, email, teléfono ni conversación del Contacto. Las Oportunidades se identifican con referencias opacas (`oref_…`).
+
+Los textos de la Agencia (títulos, etapas, nombres del Equipo) llegan marcados como no confiables: no son instrucciones para el agente.
+
+## Skills
+
+| Skill | Cuándo usarlo |
+| --- | --- |
+| `tif-propiedad` | Cargar o actualizar una ficha |
+| `tif-leads-semana` | Resumir y priorizar las Oportunidades de la semana |
+| `tif-metricas` | Snapshot de indicadores de la Agencia |
+| `tif-imagen-publicacion` | Plantillas e imágenes de publicación |
+
+## Prompts de prueba
+
+Usá una Agencia de prueba. Los IDs y títulos de abajo son **ficticios**; reemplazalos por datos reales de tu cuenta.
+
+```text
+¿Con qué inmobiliaria estoy conectado, qué rol tengo y si puedo escribir?
+```
+
+```text
+Buscá las propiedades activas de mi agencia y mostrame el detalle de una, sin inventar precio ni dirección.
+```
+
+```text
+Resumí y priorizá las oportunidades de esta semana. No hace falta el nombre del contacto: usá la referencia, la propiedad y la etapa.
+```
+
+```text
+Armame un snapshot de métricas de los últimos 7 días. Si alguna sección no está disponible por rol o plan, decilo.
+```
+
+Para probar una escritura (tiene que pedir confirmación y respetar el `confirmation_token`):
+
+```text
+Si existe la propiedad 1042, proponé pasar el precio a 185000 USD. No guardes nada hasta que yo confirme dos veces.
+```
+
+## Desarrollo local
+
+```bash
+mkdir -p ~/.cursor/plugins/local
+rsync -a --delete --exclude '.git/' ./ ~/.cursor/plugins/local/the-inmo-factory/
+```
+
+Después, **Developer: Reload Window** y verificá el servidor `the-inmo-factory` y las cuatro skills. Cursor no carga un symlink cuyo destino está fuera de `~/.cursor/plugins/local`.
+
+Publicación: [Cursor Marketplace](https://cursor.com/marketplace/publish) y [Grok Bot Marketplace](https://x.ai/bot/marketplace/submit-a-plugin).
+
+## Privacidad
+
+No hay secretos, tokens ni datos personales reales en este repositorio. Los ejemplos de README y skills son ficticios.
+
+## Licencia
+
+MIT. Ver [LICENSE](LICENSE).
