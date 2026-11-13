@@ -37,10 +37,10 @@ funcionalidades ya incluidas en el plan de tu agencia; el plugin no desbloquea
 ni vende funciones extra. Precios: [https://www.tif.ar/precios](https://www.tif.ar/precios).
 
 Al conectar tu cuenta aceptás los
-[Términos de Servicio](https://www.tif.ar/terminos) de The Inmo Factory y
-reconocés su [Política de Privacidad](https://www.tif.ar/privacidad). Los datos
+[Términos y Condiciones](https://www.tif.ar/terminos) de The Inmo Factory y
+tomás conocimiento de su [Política de Privacidad](https://www.tif.ar/privacidad). Los datos
 que devuelve el servidor se envían al cliente de IA que conectás, por tu
-instrucción.
+indicación.
 
 Soporte: hola@tif.ar
 
