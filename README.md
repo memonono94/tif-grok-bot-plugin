@@ -6,6 +6,49 @@ TIF es la plataforma SaaS para inmobiliarias y corredores en Argentina: sitio co
 
 Este repositorio **no** incluye ni modifica el servidor. Solo empaqueta el manifiesto, la conexión MCP y skills de uso.
 
+## Requirements and pricing
+
+This plugin is free and adds no fees. It does not register users or process
+payments. To use it you need an existing, active account on
+[The Inmo Factory](https://www.tif.ar), a paid SaaS for real-estate agencies
+in Argentina. Available tools depend on your role and on the features already
+included in your agency's plan; the plugin does not unlock or sell extra
+features. Pricing: [https://www.tif.ar/precios](https://www.tif.ar/precios).
+
+By connecting your account you accept The Inmo Factory's
+[Terms of Service](https://www.tif.ar/terminos) and acknowledge its
+[Privacy Policy](https://www.tif.ar/privacidad). Data returned by the server is
+sent to the AI client you connect, on your instruction.
+
+Support: hola@tif.ar
+
+## License
+
+Code and documentation: MIT (see [LICENSE](LICENSE)). The Inmo Factory name and logo are
+trademarks and are not licensed; see [TRADEMARKS.md](TRADEMARKS.md).
+
+## Requisitos y precios
+
+Este plugin es gratuito y no agrega cargos. No registra usuarios ni procesa
+pagos. Para usarlo necesitás una cuenta existente y activa en
+[The Inmo Factory](https://www.tif.ar), un SaaS de pago para inmobiliarias
+en Argentina. Las herramientas disponibles dependen de tu rol y de las
+funcionalidades ya incluidas en el plan de tu agencia; el plugin no desbloquea
+ni vende funciones extra. Precios: [https://www.tif.ar/precios](https://www.tif.ar/precios).
+
+Al conectar tu cuenta aceptás los
+[Términos y Condiciones](https://www.tif.ar/terminos) de The Inmo Factory y
+tomás conocimiento de su [Política de Privacidad](https://www.tif.ar/privacidad). Los datos
+que devuelve el servidor se envían al cliente de IA que conectás, por tu
+indicación.
+
+Soporte: hola@tif.ar
+
+## Licencia
+
+Código y documentación: MIT (ver [LICENSE](LICENSE)). El nombre y el logo de The Inmo
+Factory son marcas y no están licenciados; ver [TRADEMARKS.md](TRADEMARKS.md).
+
 ## Qué hace
 
 Después de iniciar sesión con una cuenta de TIF, el agente puede:
@@ -108,7 +151,3 @@ Publicación: [Cursor Marketplace](https://cursor.com/marketplace/publish) y [Gr
 ## Privacidad
 
 No hay secretos, tokens ni datos personales reales en este repositorio. Los ejemplos de README y skills son ficticios.
-
-## Licencia
-
-MIT. Ver [LICENSE](LICENSE).
