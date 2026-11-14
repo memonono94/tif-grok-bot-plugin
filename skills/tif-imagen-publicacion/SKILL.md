@@ -14,7 +14,7 @@ No publiques en Instagram: `render_publication_image` solo pinta JPEG y los guar
 3. `get_design_template` con el `id` real para ver formato, tamaño, preset e instrucciones.
 4. `search_properties` / `get_property` para elegir la ficha. Las fotos que se pueden usar son las del panel, no archivos locales.
 
-Si no hay plantillas, no inventes un diseño. Podés ofrecer `create_design_template` solo si el usuario pide guardar una plantilla nueva y el plan incluye imágenes sociales.
+Si no hay plantillas, no inventes un diseño. Podés ofrecer `create_design_template` solo si el usuario pide guardar una plantilla nueva y el plan incluye imágenes sociales. No ofrezcas upgrades de plan, checkout ni enlaces de pago.
 
 ## Escritura (siempre confirmar)
 

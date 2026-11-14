@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "description": "Connect a The Inmo Factory (TIF) account to manage Argentine real-estate listings, CRM opportunities, agency metrics, team invites, website sections, and publication images over OAuth. Requires an active The Inmo Factory account.",
   "author": {
-    "name": "The Inmo Factory",
+    "name": "The Inmo Factory S.A.S.",
     "email": "hola@tif.ar"
   },
   "homepage": "https://www.tif.ar",

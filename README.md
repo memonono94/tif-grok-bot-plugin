@@ -6,6 +6,23 @@ TIF es la plataforma SaaS para inmobiliarias y corredores en Argentina: sitio co
 
 Este repositorio **no** incluye ni modifica el servidor. Solo empaqueta el manifiesto, la conexión MCP y skills de uso.
 
+## Requisitos y precio
+
+Este plugin es gratuito y no agrega cargos. No registra usuarios ni procesa
+pagos. Para usarlo necesitás una cuenta existente y activa en
+[The Inmo Factory](https://www.tif.ar), un SaaS de pago para inmobiliarias
+en Argentina. Las herramientas disponibles dependen de tu rol y de las
+funcionalidades ya incluidas en el plan de tu agencia; el plugin no desbloquea
+ni vende funciones extra. Precios: [https://www.tif.ar/precios](https://www.tif.ar/precios).
+
+Al conectar tu cuenta aceptás los
+[Términos y Condiciones](https://www.tif.ar/terminos) de The Inmo Factory y
+tomás conocimiento de su [Política de Privacidad](https://www.tif.ar/privacidad).
+Los datos que devuelve el servidor se envían al cliente de IA que conectás, por
+tu indicación.
+
+Soporte: hola@tif.ar
+
 ## Requirements and pricing
 
 This plugin is free and adds no fees. It does not register users or process
@@ -22,32 +39,17 @@ sent to the AI client you connect, on your instruction.
 
 Support: hola@tif.ar
 
-## License
-
-Code and documentation: MIT (see [LICENSE](LICENSE)). The Inmo Factory name and logo are
-trademarks and are not licensed; see [TRADEMARKS.md](TRADEMARKS.md).
-
-## Requisitos y precios
-
-Este plugin es gratuito y no agrega cargos. No registra usuarios ni procesa
-pagos. Para usarlo necesitás una cuenta existente y activa en
-[The Inmo Factory](https://www.tif.ar), un SaaS de pago para inmobiliarias
-en Argentina. Las herramientas disponibles dependen de tu rol y de las
-funcionalidades ya incluidas en el plan de tu agencia; el plugin no desbloquea
-ni vende funciones extra. Precios: [https://www.tif.ar/precios](https://www.tif.ar/precios).
-
-Al conectar tu cuenta aceptás los
-[Términos y Condiciones](https://www.tif.ar/terminos) de The Inmo Factory y
-tomás conocimiento de su [Política de Privacidad](https://www.tif.ar/privacidad). Los datos
-que devuelve el servidor se envían al cliente de IA que conectás, por tu
-indicación.
-
-Soporte: hola@tif.ar
-
 ## Licencia
 
-Código y documentación: MIT (ver [LICENSE](LICENSE)). El nombre y el logo de The Inmo
-Factory son marcas y no están licenciados; ver [TRADEMARKS.md](TRADEMARKS.md).
+Código y documentación: MIT (ver [LICENSE](LICENSE)). El nombre y el logo de
+The Inmo Factory son marcas de The Inmo Factory S.A.S. y no están licenciados;
+ver [TRADEMARKS.md](TRADEMARKS.md).
+
+## License
+
+Code and documentation: MIT (see [LICENSE](LICENSE)). The Inmo Factory name and
+logo are trademarks of The Inmo Factory S.A.S. and are not licensed; see
+[TRADEMARKS.md](TRADEMARKS.md).
 
 ## Qué hace
 

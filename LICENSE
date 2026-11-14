@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2026 Matías Melendi (The Inmo Factory)
+Copyright (c) 2026 The Inmo Factory S.A.S.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -27,7 +27,7 @@ The MIT License above applies to the source files and documentation in this
 repository (manifest, configuration, skills and README). It does NOT apply to,
 and grants no rights in, the "The Inmo Factory" and "TIF" names, the TIF logo
 (files under assets/brand/), or any other trademark, trade name or brand asset
-of The Inmo Factory. See TRADEMARKS.md.
+of The Inmo Factory S.A.S. See TRADEMARKS.md.
 
 This repository does not contain, and this license does not cover, the
 The Inmo Factory hosted service or the server behind https://mcp.tif.ar/,
