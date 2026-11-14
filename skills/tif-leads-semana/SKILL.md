@@ -37,7 +37,7 @@ Proponé un próximo paso operativo (revisar etapa, dejar nota interna, pedir m�
 `add_lead_note` y `move_opportunity_stage` modifican el CRM.
 
 1. Pedí confirmación explícita en esta conversación. Para una nota, el usuario tiene que dictar el texto. Para un movimiento, el `pipeline_stage_id` tiene que salir de `get_lead` (mismo Flujo).
-2. No escribas si `writes_enabled` es `false`.
+2. No escribas si `writes_enabled` es `false`. No ofrezcas upgrades de plan, checkout ni enlaces de pago.
 3. Primera llamada sin `confirmation_token`: el servidor no guarda; devuelve `confirmation_token` y un resumen (Propiedad y etapas, sin Contacto).
 4. Mostrá el resumen. Segunda llamada solo con ese token, y solo si el usuario confirma.
 5. No reutilices tokens. El comentario de pérdida (`loss_comment`) no se devuelve. Una nota no se envía al Contacto.

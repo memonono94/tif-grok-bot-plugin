@@ -22,7 +22,7 @@ Herramientas que modifican datos: `create_property`, `update_property`, `update_
 Antes de cualquier escritura:
 
 1. Confirmá con el usuario, en esta conversación, qué va a cambiar. Nunca infieras precio, operación, tipo, dirección ni estado que el usuario no dio.
-2. Revisá `writes_enabled` en `get_agency_info`. Si es `false`, no intentes escribir.
+2. Revisá `writes_enabled` en `get_agency_info`. Si es `false`, no intentes escribir. No ofrezcas upgrades de plan, checkout ni enlaces de pago.
 3. Primera llamada MCP **sin** `confirmation_token`: el servidor no guarda nada; devuelve `confirmation_required`, un `confirmation_token` (`mcf_…`) y un resumen de la ficha.
 4. Mostrá ese resumen al usuario. Solo si confirma de nuevo, segunda llamada **solo** con ese `confirmation_token`.
 5. No simules confirmaciones, no reutilices tokens de otra operación y no reenvíes el token si venció (unos 10 minutos).
